@@ -1,0 +1,47 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>简单条形图可视化</title>  
+    <style>  
+        #chart {  
+            width: 600px;  
+            height: 400px;  
+            margin: 20px auto;  
+            background-color: #f5f5f5;  
+            padding: 20px;  
+        }  
+        .bar {  
+            height: 20px;  
+            margin-bottom: 10px;  
+            background-color: #3498db;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <div id="chart"></div>  
+    <script>  
+        // 数据  
+        const data = [  
+            { label: '数据1', value: 30 },  
+            { label: '数据2', value: 60 },  
+            { label: '数据3', value: 40 },  
+            { label: '数据4', value: 80 },  
+            { label: '数据5', value: 50 }  
+        ];  
+  
+        // 获取图表容器  
+        const chartContainer = document.getElementById('chart');  
+  
+        // 绘制条形图  
+        data.forEach(item => {  
+            const bar = document.createElement('div');  
+            bar.classList.add('bar');  
+            bar.style.width = `${item.value}%`;  
+            bar.textContent = `${item.label}: ${item.value}%`;  
+            chartContainer.appendChild(bar);  
+        });  
+    </script>  
+</body>  
+</html>
